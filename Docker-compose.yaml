@@ -1,0 +1,5 @@
+version: "3.9"
+services:
+  mongodb:
+    image: mongodb:v1
+    container: mongodb
