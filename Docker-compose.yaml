@@ -2,4 +2,18 @@ version: "3.9"
 services:
   mongodb:
     image: mongodb:v1
-    container: mongodb
+    container_name: mongodb
+  catalogue:
+    image: catalogue:v1
+    container_name: catalogue
+    depends_on:
+      - mongodb
+  user:
+    image: user:v1
+    container_name: user
+    depends_on:
+      - redis
+      - mongodb
+  redis:
+    image: redis
+  
